@@ -1,0 +1,55 @@
+<form [formGroup]="inputForm" (ngSubmit)="submitForm()">
+
+  <!--class="example-container"-->
+
+  <mat-form-field>
+    <!--<input type="text" placeholder="select"-->
+    <!--matInput #input disabled-->
+    <!--formControlName="methodTitle"-->
+    <!--aria-label="methodTitle">-->
+    <!--[matAutocomplete]="methodTitle"-->
+
+
+    <mat-select placeholder="Pasirinkite metodą" formControlName="methodTitle" required (closed)="getFullMethodById()" >
+      <!--<mat-autocomplete #methodTitle="matAutocomplete">-->
+      <!--<mat-autocomplete #methodTitle="matAutocomplete">-->
+      <mat-option *ngFor="let method of methods" [value]="method.methodTitle"  (onchange)="getFullMethodById()" >
+        {{ method.methodTitle}}
+        <!--<app-display-method-details [method]="method"></app-display-method-details>-->
+      </mat-option>
+      <!--</mat-autocomplete>-->
+    </mat-select>
+    <!--</mat-autocomplete>-->
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select  placeholder="Pasirinkite tipalą" formControlName="solutionTitle" required >
+      <mat-option *ngFor="let solutionWithReagents of solutionsWithReagents" [value]="solutionWithReagents.solution.solutionTitle">
+        {{solutionWithReagents.solution.solutionTitle}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput #input type="date" placeholder="Įveskite gaminimo datą" formControlName="solutionCreationDate" required (closed)="findReagents()">
+
+  </mat-form-field>
+
+  <!--<div formControlName="methodTitle">-->
+
+  <!--</div>-->
+  <button mat-raised-button type="submit" color="primary" (click)="sendToBackEnd()">
+    submit
+  </button>
+
+
+
+
+
+
+</form>
+
+<!--<div *ngFor="let method of methods">-->
+  <!--<app-display-method-details *ngIf="method.methodTitle===methodTitle" [method]="method"></app-display-method-details>-->
+
+<!--</div>-->
