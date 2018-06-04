@@ -8,6 +8,8 @@ import {SolutionsHistory} from "../models/SolutionsHistory";
 export class BackendServiceService {
 
   // httpLink = 'http://localhost:8080/';
+  //change for dynos
+
   httpLink = 'https://solutions-registry-back.herokuapp.com';
 
   constructor(private http: HttpClient) { }
