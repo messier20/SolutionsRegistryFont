@@ -4,16 +4,7 @@
   <div *ngIf="flag">
     <table mat-table [dataSource]="dataSource.filteredData" class="mat-elevation-z8">
 
-      <!--- Note that these columns can be defined in any order.
-            The actual rendered columns are set as a property on the row definition" -->
 
-      <!-- Position Column -->
-      <!--<ng-container matColumnDef="methodTitle">-->
-      <!--<th mat-header-cell *matHeaderCellDef> No. </th>-->
-      <!--<td mat-cell *matCellDef="let element"> {{element.solutionComponent}} </td>-->
-      <!--</ng-container>-->
-
-      <!-- Name Column -->
       <ng-container matColumnDef="methodTitle">
         <th mat-header-cell *matHeaderCellDef> Metodo žymuo/pavadinimas</th>
         <td mat-cell *matCellDef="let element"> {{element.method.methodTitle}}</td>
@@ -38,14 +29,9 @@
         <td mat-cell *matCellDef="let element"> {{element.solutionCreationDate}}</td>
       </ng-container>
 
-      <!--<ng-container matColumnDef="solutionCode">-->
-      <!--<th mat-header-cell *matHeaderCellDef> Tirpalo kodas</th>-->
-      <!--<td mat-cell *matCellDef="let element"> {{element.solution}}</td>-->
-      <!--</ng-container>-->
-
 
       <ng-container matColumnDef="solutionComponent">
-        <th mat-header-cell *matHeaderCellDef> Tirpalo komponentai </th>
+        <th mat-header-cell *matHeaderCellDef> Tirpalo komponentai</th>
         <td mat-cell *matCellDef="let element">
           <div *ngFor="let a of element.reagentsList">
             {{a.solutionComponent}}
@@ -80,27 +66,13 @@
         </td>
       </ng-container>
 
-      <!--<ng-container matColumnDef="simple">-->
-      <!--<th mat-header-cell *matHeaderCellDef> List2</th>-->
-      <!--<td mat-cell *matCellDef="let element">-->
-      <!--<div *ngFor="let a of element.reagentsList">-->
-      <!--{{a.capacity}}-->
-      <!--</div>-->
-      <!--</td>-->
-      <!--</ng-container>-->
-
-      <!-- Weight Column -->
-
-
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
     <div *ngFor="let obj of solutionWithReagents">
-      <!--<div *ngFor="let a of obj.solution">-->
       <p>
         {{a.solution}}
       </p>
-      <!--</div>-->
     </div>
 
   </div>
