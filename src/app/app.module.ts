@@ -26,7 +26,6 @@ import {
   MatTooltipModule, MatTabsModule
 } from '@angular/material';
 import { TestingComponent } from './testing/testing.component';
-import { DisplayMethodDetailsComponent } from './display-method-details/display-method-details.component';
 import { DisplayHistoryLogComponent } from './display-history-log/display-history-log.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import {CdkTableModule} from "@angular/cdk/table";
@@ -37,7 +36,6 @@ import {DataSource} from "@angular/cdk/table";
     AppComponent,
     DisplayMethodsComponent,
     TestingComponent,
-    DisplayMethodDetailsComponent,
     DisplayHistoryLogComponent,
     NavigationComponent
   ],
