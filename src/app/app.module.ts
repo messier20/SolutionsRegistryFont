@@ -12,24 +12,14 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 import {
   MatAutocompleteModule,
-  MatCardModule,
-  MatDatepickerModule,
-  MatDialogModule,
-  MatGridListModule,
-  MatIconModule,
-  MatInputModule,
-  MatNativeDateModule,
-  // MatDatepickerModule, MatDialogModule, MatExpansionPanel, MatFormFieldModule, MatGridListModule, MatIconModule,
-  MatMenuModule,
-  MatTabLabel, MatPaginatorModule, MatTableModule,
-  MatButtonModule, MatToolbarModule, MatSidenavModule, MatCheckboxModule, MatSnackBarModule,
-  MatTooltipModule, MatTabsModule
+  MatInputModule,MatTableModule,
+  MatButtonModule, MatTabsModule
 } from '@angular/material';
 import { TestingComponent } from './testing/testing.component';
 import { DisplayHistoryLogComponent } from './display-history-log/display-history-log.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import {CdkTableModule} from "@angular/cdk/table";
-import {DataSource} from "@angular/cdk/table";
+import { HistoryEntriesModificationsComponent } from './history-entries-modifications/history-entries-modifications.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +27,8 @@ import {DataSource} from "@angular/cdk/table";
     DisplayMethodsComponent,
     TestingComponent,
     DisplayHistoryLogComponent,
-    NavigationComponent
+    NavigationComponent,
+    HistoryEntriesModificationsComponent
   ],
   imports: [
     BrowserModule,

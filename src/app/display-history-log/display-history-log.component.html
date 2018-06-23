@@ -7,7 +7,11 @@
 
       <ng-container matColumnDef="methodTitle">
         <th mat-header-cell *matHeaderCellDef> Metodo žymuo/pavadinimas</th>
-        <td mat-cell *matCellDef="let element"> {{element.method.methodTitle}}</td>
+        <td mat-cell *matCellDef="let element">
+          <button mat-button (click)="selectMethod(element.id)">
+          {{element.method.methodTitle}}
+        </button>
+        </td>
       </ng-container>
       <ng-container matColumnDef="solutionTitle">
         <th mat-header-cell *matHeaderCellDef> Tirpalo pavadainimas, tirpalo koncentracija</th>
@@ -76,5 +80,10 @@
     </div>
 
   </div>
+</div>
+<div *ngIf="selectedToOpen">
+  <p style="color: red">
+    aaaaaaaaaaaaaaaaaaa
+  </p>
 </div>
 <button (click)="print()">print</button>
